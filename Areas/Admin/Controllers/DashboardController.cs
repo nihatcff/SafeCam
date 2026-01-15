@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using SafeCam.Contexts;
+using SafeCam.ViewModels.MemberViewModels;
 
 namespace SafeCam.Areas.Admin.Controllers;
 

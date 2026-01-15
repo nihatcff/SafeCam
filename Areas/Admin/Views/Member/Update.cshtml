@@ -1,0 +1,38 @@
+﻿@model MemberUpdateVM
+
+
+<div class="container">
+    <div class="row">
+        <div><h2>CREATE UPDATE</h2></div>
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="Fullname" class="form-label"></label>
+                <input asp-for=Fullname class="form-control" placeholder="Fullname">
+                <span asp-validation-for="Fullname" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Designation" class="form-label"></label>
+                <input asp-for=Designation class="form-control" placeholder="Designation">
+                <span asp-validation-for="Designation" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Image" class="form-label"></label>
+                <input asp-for=Image class="form-control">
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update</button>
+            <button asp-action="Index" class="btn btn-danger">Cancel</button>
+
+        </form>
+
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"></partial>
+}
