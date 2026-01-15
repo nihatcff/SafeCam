@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SafeCam.Contexts;
+using SafeCam.Models;
 
 namespace SafeCam
 {
@@ -15,6 +17,12 @@ namespace SafeCam
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
             });
+
+            builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
+            {
+                options.Password.RequiredLength=4;
+                options.Password.RequireNonAlphanumeric = true;
+            }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 
             var app = builder.Build();
 
